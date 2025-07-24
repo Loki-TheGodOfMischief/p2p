@@ -17,6 +17,12 @@ public class CryptoUtil {
         return KeyFactory.getInstance("RSA").generatePrivate(spec);
     }
 
+    public static PublicKey loadPublicKey(String path) throws Exception {
+        byte[] keyBytes = Files.readAllBytes(Paths.get(path));
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
+        return KeyFactory.getInstance("RSA").generatePublic(spec);
+    }
+
     public static SecretKey decryptAESKey(String encryptedBase64) throws Exception {
         byte[] encryptedKey = Base64.getDecoder().decode(encryptedBase64);
         PrivateKey privateKey = loadPrivateKey("client/private_key.der");
