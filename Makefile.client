@@ -1,0 +1,12 @@
+SRC_DIR=src
+OUT_DIR=out
+CLIENT_MAIN=client.ClientMain
+
+all: compile run
+
+compile:
+	mkdir -p $(OUT_DIR)
+	javac -d $(OUT_DIR) $(shell find $(SRC_DIR) -name "*.java")
+
+run:
+	java -cp $(OUT_DIR) $(CLIENT_MAIN)
