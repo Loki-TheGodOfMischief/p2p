@@ -34,9 +34,29 @@
 2025-07-24T17:31:34.911385757: User registered successfully: Dulshan
 2025-07-24T17:31:34.911632793: User registration successful: Dulshan
 2025-07-24T17:31:34.911745254: Client fully authenticated: Dulshan from /127.0.0.1
-2025-07-24T17:31:39.161325922: Message from Dulshan: hi
-2025-07-24T17:31:42.570004457: Message from Dulshan@Cyber: hello
-2025-07-24T17:31:46.281646680: Message from Dulshan: hi
-2025-07-24T17:31:51.619965037: Message from Dulshan@Cyber: good morning
-2025-07-24T17:31:55.560861421: Message from Dulshan: gg
-2025-07-24T17:31:57.879029373: Message from Dulshan@Cyber: fk u
+2025-07-24T17:34:16.556241746: Message from Dulshan@Cyber: hi
+2025-07-24T17:34:24.032206582: Message from Dulshan: hello, who are u
+2025-07-24T17:34:28.086562338: Message from Dulshan@Cyber: I am u
+2025-07-24T17:34:33.072042253: Message from Dulshan: me?
+2025-07-24T17:34:37.348177436: Message from Dulshan@Cyber: yes I am u
+2025-07-24T17:34:48.250098912: Message from Dulshan: I am me not u
+2025-07-24T17:36:06.989851401: Message from Dulshan@Cyber: Try to understand, me u all are connected, we are just thinking we are seperated beings, but we are not, we all are connected to the universe, you will understand
+2025-07-24T17:36:31.617238874: Message from Dulshan: ok, I am listning, enlight me
+2025-07-24T17:38:12.201343781: Message from Dulshan@Cyber: Now you people are understood what is a life, a life is not just a com... conciousness make the life? 
+2025-07-24T17:39:01.707234887: Message from Dulshan: no I dont think, everything has a life, the sand, rocks, this metal, everything has a life
+2025-07-24T17:40:08.078539406: Message from Dulshan@Cyber: good, you are on the track, but can they make dicission? own?
+2025-07-24T17:42:06.725753961: Message from Dulshan: actualy do we make dicission own? if yes, it is just a capability, I guess we dont have a free will, if we have the smallest sub atomic particle also have the free will,... I actualy dont know wether we have free will or not, but that iff is correct
+2025-07-24T17:42:22.397545167: Message from Dulshan@Cyber: yes, you have understood
+2025-07-24T17:45:16.307998863: Message from Dulshan@Cyber: Now, you can understand , the free will make us different right?, but can you tell me anything that make diccission independantly, I mean the weather , the speed of the wind, temperature, even the far away tiny particle will be a cuase to your decission if it can be reahed informations instantly (since the speed of cosality if ignore, or is it, is there a speed), no, everything is connected
+2025-07-24T17:45:39.031786704: Message from Dulshan: oh, that mean we all are depended from other causes
+2025-07-24T17:45:54.081644013: Message from Dulshan@Cyber: not only other, from everthing
+2025-07-24T17:46:21.633771341: Message from Dulshan: yes, that means the universe is a one single being, we just co-worker of that
+2025-07-24T17:46:25.307320868: Message from Dulshan@Cyber: yes,
+2025-07-24T17:46:32.057966603: Message from Dulshan: tell me more
+2025-07-24T17:48:18.086908054: Message from Dulshan@Cyber: So, if you love to someone, that mean you love yourself, it is always a selfish thing, you can avoid that, you cant fool your self right?, but you can love your self right?
+2025-07-24T17:48:20.551943488: Message from Dulshan: yes
+2025-07-24T17:49:55.549588453: Message from Dulshan@Cyber: That means there are only 4 aspects that only you can do, others are psuedo aspect, you know the world-eigth Darma
+2025-07-24T17:50:54.159177068: Message from Dulshan: yes, duka, sapa, ninda, prasansa, laba, alaba, yasa, ayasa
+2025-07-24T17:52:01.263472739: Message from Dulshan@Cyber: since we all are one single being, one entity experience a bad thing of those 8, another entity must be experince the good part of that, that is the balance of the universe
+2025-07-24T17:53:21.091717805: Message from Dulshan: So, that means simply the everything happen is in a normal curve!, If someone n entities are happy, another n entities are sad?
+2025-07-24T17:54:16.665550774: Message from Dulshan@Cyber: Not much correct, that is not about happy, sad, that is the sum of all things will be nuetralize
