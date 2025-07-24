@@ -7,6 +7,7 @@ import java.util.*;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import common.*;
+import java.security.spec.X509EncodedKeySpec;
 
 public class ClientHandler implements Runnable {
     private Socket socket;
@@ -17,6 +18,9 @@ public class ClientHandler implements Runnable {
     private String username;
     private UserManager userManager;
     private boolean isAuthenticated = false;
+
+    // Static map to store username -> public key
+    private static final Map<String, PublicKey> publicKeys = new HashMap<>();
 
     public ClientHandler(Socket socket, List<ClientHandler> clients, UserManager userManager) {
         this.socket = socket;
@@ -50,6 +54,13 @@ public class ClientHandler implements Runnable {
                 return;
             }
 
+            // 4. Receive client's public key for E2EE
+            receiveAndStoreClientPublicKey();
+            // 5. Send all public keys to this client
+            sendAllPublicKeys();
+            // 6. Notify all other clients of the new/updated public key
+            broadcastPublicKey(username, publicKeys.get(username));
+
             LoggerUtil.log("Client fully authenticated: " + username + " from " + socket.getInetAddress());
             isAuthenticated = true;
 
@@ -57,7 +68,7 @@ public class ClientHandler implements Runnable {
             sendSystemMessage("Welcome to the secure chat, " + username + "!");
             broadcastSystemMessage(username + " has joined the chat.");
 
-            // 4. Chat loop
+            // 7. Chat loop
             chatLoop();
 
         } catch (Exception e) {
@@ -200,8 +211,12 @@ public class ClientHandler implements Runnable {
             
             if (receivedData instanceof Message) {
                 Message msg = (Message) receivedData;
-                LoggerUtil.log("Message from " + username + ": " + msg.getContent());
-                broadcast(msg);
+                // LoggerUtil.log("Message from " + username + ": " + msg.getContent()); // Do not log plaintext for E2EE
+                if (msg.getTo() != null && !msg.getTo().trim().isEmpty()) {
+                    sendPrivate(msg);
+                } else {
+                    broadcast(msg);
+                }
             } else if (receivedData instanceof String) {
                 String command = (String) receivedData;
                 handleCommand(command);
@@ -257,9 +272,67 @@ public class ClientHandler implements Runnable {
         out.writeObject(encrypted);
     }
 
+    private void sendEncryptedMessage(Map<String, byte[]> pubKeyMap) throws Exception {
+        byte[] encrypted = AESUtil.encryptObject((Serializable) pubKeyMap, aesKey);
+        out.writeObject(encrypted);
+    }
+
     private Object decryptMessage() throws Exception {
         byte[] encrypted = (byte[]) in.readObject();
         return AESUtil.decryptObject(encrypted, aesKey);
+    }
+
+    private void receiveAndStoreClientPublicKey() throws Exception {
+        // Receive public key bytes from client
+        byte[] pubKeyBytes = (byte[]) decryptMessage();
+        X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(pubKeyBytes);
+        KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+        PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
+        synchronized (publicKeys) {
+            publicKeys.put(username, pubKey);
+        }
+    }
+
+    private void sendAllPublicKeys() throws Exception {
+        Map<String, byte[]> pubKeyMap = new HashMap<>();
+        synchronized (publicKeys) {
+            for (Map.Entry<String, PublicKey> entry : publicKeys.entrySet()) {
+                pubKeyMap.put(entry.getKey(), entry.getValue().getEncoded());
+            }
+        }
+        sendEncryptedMessage(pubKeyMap);
+    }
+
+    private void broadcastPublicKey(String user, PublicKey pubKey) throws Exception {
+        for (ClientHandler client : clients) {
+            if (client != this && client.isAuthenticated) {
+                client.sendSinglePublicKey(user, pubKey);
+            }
+        }
+    }
+
+    private void sendSinglePublicKey(String user, PublicKey pubKey) throws Exception {
+        Map<String, byte[]> singleKey = new HashMap<>();
+        singleKey.put(user, pubKey.getEncoded());
+        sendEncryptedMessage(singleKey);
+    }
+
+    private void sendPrivate(Message msg) throws Exception {
+        boolean found = false;
+        for (ClientHandler client : clients) {
+            if (client.isAuthenticated && client.getUsername() != null && client.getUsername().equalsIgnoreCase(msg.getTo())) {
+                client.sendMessage(msg);
+                found = true;
+                break;
+            }
+        }
+        // Optionally, send a copy to the sender as confirmation
+        if (!msg.getFrom().equalsIgnoreCase(msg.getTo())) {
+            sendMessage(msg);
+        }
+        if (!found) {
+            sendSystemMessage("User '" + msg.getTo() + "' not found or not online.");
+        }
     }
 
     private void broadcast(Message msg) throws Exception {
@@ -268,10 +341,12 @@ public class ClientHandler implements Runnable {
                 client.sendMessage(msg);
             }
         }
+        // Optionally, send a copy to the sender
+        sendMessage(msg);
     }
 
     private void broadcastSystemMessage(String message) throws Exception {
-        Message systemMsg = new Message("SYSTEM", message);
+        Message systemMsg = new Message("SYSTEM", null, message);
         for (ClientHandler client : clients) {
             if (client.isAuthenticated) {
                 client.sendMessage(systemMsg);
@@ -280,7 +355,7 @@ public class ClientHandler implements Runnable {
     }
 
     private void sendSystemMessage(String message) throws Exception {
-        Message systemMsg = new Message("SYSTEM", message);
+        Message systemMsg = new Message("SYSTEM", null, message);
         sendMessage(systemMsg);
     }
 

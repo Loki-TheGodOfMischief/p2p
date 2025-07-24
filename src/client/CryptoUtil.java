@@ -40,4 +40,18 @@ public class CryptoUtil {
         byte[] encrypted = cipher.doFinal(message.getBytes(StandardCharsets.UTF_8));
         return Base64.getEncoder().encodeToString(encrypted);
     }
+
+    public static void generateAndSaveRSAKeyPair(String publicKeyPath, String privateKeyPath) throws Exception {
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+        keyGen.initialize(2048);
+        KeyPair keyPair = keyGen.generateKeyPair();
+
+        // Save public key
+        X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(keyPair.getPublic().getEncoded());
+        Files.write(Paths.get(publicKeyPath), pubSpec.getEncoded());
+
+        // Save private key
+        PKCS8EncodedKeySpec privSpec = new PKCS8EncodedKeySpec(keyPair.getPrivate().getEncoded());
+        Files.write(Paths.get(privateKeyPath), privSpec.getEncoded());
+    }
 }

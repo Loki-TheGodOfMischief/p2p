@@ -1,12 +1,21 @@
-SRC_DIR=src
-OUT_DIR=out
-SERVER_MAIN=server.ChatServer
+# Makefile.server (Linux/WSL)
+JAVA = javac
+JAVA_FLAGS = -cp .
+SERVER_SRC = src/server
+SERVER_CLASSES = bin/server
 
-all: compile run
+all: prepare server
 
-compile:
-	mkdir -p $(OUT_DIR)
-	javac -d $(OUT_DIR) $(shell find $(SRC_DIR) -name "*.java")
+prepare:
+	mkdir -p $(SERVER_CLASSES)
+
+server:
+	$(JAVA) $(JAVA_FLAGS) -d $(SERVER_CLASSES) $(SERVER_SRC)/*.java
+
+clean:
+	rm -rf $(SERVER_CLASSES)
 
 run:
-	java -cp $(OUT_DIR) $(SERVER_MAIN)
+	java -cp $(SERVER_CLASSES) server.ChatServer
+
+.PHONY: all prepare server clean run

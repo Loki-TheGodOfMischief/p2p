@@ -9,6 +9,11 @@ import javax.crypto.Cipher;
 import java.util.Scanner;
 import common.Message;
 import client.AESUtil;
+import java.util.HashMap;
+import java.util.Map;
+import java.security.spec.X509EncodedKeySpec;
+import java.security.KeyFactory;
+import java.util.Base64;
 
 public class ClientConnection {
     private String serverAddress;
@@ -19,6 +24,7 @@ public class ClientConnection {
     private SecretKey aesKey;
     private String username;
     private boolean isConnected = false;
+    private Map<String, PublicKey> userPublicKeys = new HashMap<>();
 
     public ClientConnection(String serverAddress, int serverPort) {
         this.serverAddress = serverAddress;
@@ -27,6 +33,15 @@ public class ClientConnection {
 
     public void connect() {
         try {
+            // Ensure RSA key pair exists for E2EE
+            File privKeyFile = new File("client/private_key.der");
+            File pubKeyFile = new File("client/public_key.der");
+            if (!privKeyFile.exists() || !pubKeyFile.exists()) {
+                System.out.println("Generating new RSA key pair for end-to-end encryption...");
+                CryptoUtil.generateAndSaveRSAKeyPair("client/public_key.der", "client/private_key.der");
+                System.out.println("RSA key pair generated and saved.");
+            }
+
             socket = new Socket(serverAddress, serverPort);
             System.out.println("Connected to server at " + serverAddress + ":" + serverPort);
 
@@ -50,6 +65,11 @@ public class ClientConnection {
                 System.out.println("User authentication failed!");
                 return;
             }
+
+            // 4. Send our public key to the server for E2EE
+            sendOwnPublicKey();
+            // 5. Receive all public keys from the server
+            receiveAllPublicKeys();
 
             System.out.println("Successfully authenticated as: " + username);
             isConnected = true;
@@ -95,7 +115,7 @@ public class ClientConnection {
             // Load client's keys (optional - create dummy keys if not available)
             PrivateKey clientPrivateKey;
             PublicKey clientPublicKey;
-            
+
             try {
                 clientPrivateKey = CryptoUtil.loadPrivateKey("client/private_key.der");
                 clientPublicKey = CryptoUtil.loadPublicKey("client/public_key.der");
@@ -134,7 +154,7 @@ public class ClientConnection {
 
     private boolean performUserAuthentication() throws Exception {
         Scanner scanner = new Scanner(System.in);
-        
+
         // Wait for authentication request
         String authRequest = (String) decryptMessage();
         if (!"AUTH_REQUEST".equals(authRequest)) {
@@ -147,9 +167,9 @@ public class ClientConnection {
             System.out.println("1. Login with existing account");
             System.out.println("2. Register new account");
             System.out.print("Choose option (1 or 2): ");
-            
+
             String choice = scanner.nextLine().trim();
-            
+
             if ("1".equals(choice)) {
                 if (handleLogin(scanner)) {
                     return true;
@@ -162,7 +182,7 @@ public class ClientConnection {
                 System.out.println("Invalid choice. Please enter 1 or 2.");
                 continue;
             }
-            
+
             // Check server response
             String response = (String) decryptMessage();
             if (response.startsWith("AUTH_RETRY:")) {
@@ -180,7 +200,7 @@ public class ClientConnection {
 
     private boolean handleLogin(Scanner scanner) throws Exception {
         sendEncryptedMessage("LOGIN");
-        
+
         // Wait for login request
         String loginRequest = (String) decryptMessage();
         if (!"LOGIN_REQUEST".equals(loginRequest)) {
@@ -190,14 +210,14 @@ public class ClientConnection {
 
         System.out.print("Username: ");
         String inputUsername = scanner.nextLine().trim();
-        
+
         System.out.print("Password: ");
         String password = readPassword();
-        
+
         // Send credentials
         sendEncryptedMessage(inputUsername);
         sendEncryptedMessage(password);
-        
+
         // Wait for response
         String response = (String) decryptMessage();
         if ("AUTH_SUCCESS".equals(response)) {
@@ -208,13 +228,13 @@ public class ClientConnection {
             System.out.println("Login failed: " + response.substring(12));
             return false;
         }
-        
+
         return false;
     }
 
     private boolean handleRegistration(Scanner scanner) throws Exception {
         sendEncryptedMessage("REGISTER");
-        
+
         // Wait for registration request
         String registerRequest = (String) decryptMessage();
         if (!"REGISTER_REQUEST".equals(registerRequest)) {
@@ -227,25 +247,25 @@ public class ClientConnection {
         System.out.println("- Must contain uppercase and lowercase letters");
         System.out.println("- Must contain at least one digit");
         System.out.println("- Must contain at least one special character");
-        
+
         System.out.print("Choose username: ");
         String newUsername = scanner.nextLine().trim();
-        
+
         System.out.print("Choose password: ");
         String newPassword = readPassword();
-        
+
         System.out.print("Confirm password: ");
         String confirmPassword = readPassword();
-        
+
         if (!newPassword.equals(confirmPassword)) {
             System.out.println("Passwords do not match!");
             return false;
         }
-        
+
         // Send credentials
         sendEncryptedMessage(newUsername);
         sendEncryptedMessage(newPassword);
-        
+
         // Wait for response
         String response = (String) decryptMessage();
         if ("AUTH_SUCCESS".equals(response)) {
@@ -256,7 +276,7 @@ public class ClientConnection {
             System.out.println("Registration failed: " + response.substring(12));
             return false;
         }
-        
+
         return false;
     }
 
@@ -278,23 +298,24 @@ public class ClientConnection {
         System.out.println("\n=== Chat Interface ===");
         System.out.println("You can start chatting now!");
         System.out.println("Commands:");
+        System.out.println("  /msg <username> <message> - Send a private message");
         System.out.println("  /password - Change your password");
         System.out.println("  /info - Show your account information");
         System.out.println("  /quit - Exit the chat");
         System.out.println("========================");
-        
+
         try {
             String input;
             while (isConnected && (input = scanner.nextLine()) != null) {
                 if (input.trim().isEmpty()) {
                     continue;
                 }
-                
+
                 if (input.startsWith("/")) {
                     handleClientCommand(input, scanner);
                 } else {
-                    // Send regular chat message
-                    Message chatMessage = new Message(username, input);
+                    // Send regular group chat message (not E2EE for simplicity)
+                    Message chatMessage = new Message(username, null, input);
                     sendEncryptedMessage(chatMessage);
                 }
             }
@@ -304,23 +325,43 @@ public class ClientConnection {
     }
 
     private void handleClientCommand(String command, Scanner scanner) throws Exception {
+        if (command.toLowerCase().startsWith("/msg ")) {
+            // Private message: /msg <username> <message>
+            String[] parts = command.split(" ", 3);
+            if (parts.length < 3) {
+                System.out.println("Usage: /msg <username> <message>");
+                return;
+            }
+            String toUser = parts[1];
+            String msg = parts[2];
+            PublicKey recipientKey = userPublicKeys.get(toUser);
+            if (recipientKey == null) {
+                System.out.println("[ERROR] No public key for user: " + toUser);
+                return;
+            }
+            String encryptedMsg = encryptWithPublicKey(msg, recipientKey);
+            Message privateMsg = new Message(username, toUser, encryptedMsg);
+            sendEncryptedMessage(privateMsg);
+            System.out.println("[To " + toUser + "] " + msg);
+            return;
+        }
         String cmd = command.toLowerCase().trim();
-        
+
         switch (cmd) {
             case "/quit":
                 System.out.println("Goodbye!");
                 sendEncryptedMessage("QUIT");
                 isConnected = false;
                 break;
-                
+
             case "/password":
                 changePassword(scanner);
                 break;
-                
+
             case "/info":
                 sendEncryptedMessage("USER_INFO");
                 break;
-                
+
             default:
                 System.out.println("Unknown command: " + command);
                 System.out.println("Available commands: /password, /info, /quit");
@@ -330,18 +371,18 @@ public class ClientConnection {
     private void changePassword(Scanner scanner) throws Exception {
         System.out.print("Enter current password: ");
         String oldPassword = readPassword();
-        
+
         System.out.print("Enter new password: ");
         String newPassword = readPassword();
-        
+
         System.out.print("Confirm new password: ");
         String confirmPassword = readPassword();
-        
+
         if (!newPassword.equals(confirmPassword)) {
             System.out.println("New passwords do not match!");
             return;
         }
-        
+
         String changeCommand = "CHANGE_PASSWORD:" + oldPassword + "|" + newPassword;
         sendEncryptedMessage(changeCommand);
     }
@@ -350,14 +391,32 @@ public class ClientConnection {
         try {
             while (isConnected) {
                 Object receivedData = decryptMessage();
-                
+
+                // Handle public key map update (single or all)
+                if (receivedData instanceof Map) {
+                    Map<?, ?> map = (Map<?, ?>) receivedData;
+                    for (Map.Entry<?, ?> entry : map.entrySet()) {
+                        String user = (String) entry.getKey();
+                        byte[] pubKeyBytes = (byte[]) entry.getValue();
+                        X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(pubKeyBytes);
+                        KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                        PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
+                        userPublicKeys.put(user, pubKey);
+                        System.out.println("[INFO] Received/updated public key for user: " + user);
+                    }
+                    continue;
+                }
+
                 if (receivedData instanceof Message) {
                     Message message = (Message) receivedData;
                     if ("SYSTEM".equals(message.getFrom())) {
                         System.out.println("[SYSTEM] " + message.getContent());
+                    } else if (message.getTo() != null && !message.getTo().trim().isEmpty() && message.getTo().equalsIgnoreCase(username)) {
+                        // Received a private message: decrypt with our private key
+                        String decrypted = decryptWithOwnPrivateKey(message.getContent());
+                        System.out.println("[PRIVATE] " + message.getFrom() + ": " + decrypted);
                     } else {
-                        System.out.println("[" + message.getTimestamp().toString().substring(11, 19) + "] " + 
-                                         message.getFrom() + ": " + message.getContent());
+                        System.out.println("[" + message.getTimestamp().toString().substring(11, 19) + "] " + message.getFrom() + ": " + message.getContent());
                     }
                 } else if (receivedData instanceof String) {
                     String response = (String) receivedData;
@@ -369,6 +428,19 @@ public class ClientConnection {
                 System.err.println("Connection lost: " + e.getMessage());
                 isConnected = false;
             }
+        }
+    }
+
+    private String decryptWithOwnPrivateKey(String encryptedBase64) {
+        try {
+            PrivateKey privKey = CryptoUtil.loadPrivateKey("client/private_key.der");
+            byte[] encryptedBytes = Base64.getDecoder().decode(encryptedBase64);
+            Cipher cipher = Cipher.getInstance("RSA");
+            cipher.init(Cipher.DECRYPT_MODE, privKey);
+            byte[] decrypted = cipher.doFinal(encryptedBytes);
+            return new String(decrypted, java.nio.charset.StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return "[E2EE DECRYPTION ERROR]";
         }
     }
 
@@ -396,6 +468,26 @@ public class ClientConnection {
         return AESUtil.decryptObject(encrypted, aesKey);
     }
 
+    private void sendOwnPublicKey() throws Exception {
+        PublicKey pubKey = CryptoUtil.loadPublicKey("client/public_key.der");
+        sendEncryptedMessage(pubKey.getEncoded());
+    }
+
+    private void receiveAllPublicKeys() throws Exception {
+        Object obj = decryptMessage();
+        if (obj instanceof Map) {
+            Map<?, ?> map = (Map<?, ?>) obj;
+            for (Map.Entry<?, ?> entry : map.entrySet()) {
+                String user = (String) entry.getKey();
+                byte[] pubKeyBytes = (byte[]) entry.getValue();
+                X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(pubKeyBytes);
+                KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
+                userPublicKeys.put(user, pubKey);
+            }
+        }
+    }
+
     private void disconnect() {
         isConnected = false;
         try {
@@ -405,6 +497,17 @@ public class ClientConnection {
             }
         } catch (IOException e) {
             System.err.println("Error closing connection: " + e.getMessage());
+        }
+    }
+
+    private String encryptWithPublicKey(String message, PublicKey pubKey) {
+        try {
+            Cipher cipher = Cipher.getInstance("RSA");
+            cipher.init(Cipher.ENCRYPT_MODE, pubKey);
+            byte[] encrypted = cipher.doFinal(message.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            return Base64.getEncoder().encodeToString(encrypted);
+        } catch (Exception e) {
+            return "[E2EE ENCRYPTION ERROR]";
         }
     }
 }
