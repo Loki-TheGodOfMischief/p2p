@@ -60,3 +60,7 @@
 2025-07-24T17:52:01.263472739: Message from Dulshan@Cyber: since we all are one single being, one entity experience a bad thing of those 8, another entity must be experince the good part of that, that is the balance of the universe
 2025-07-24T17:53:21.091717805: Message from Dulshan: So, that means simply the everything happen is in a normal curve!, If someone n entities are happy, another n entities are sad?
 2025-07-24T17:54:16.665550774: Message from Dulshan@Cyber: Not much correct, that is not about happy, sad, that is the sum of all things will be nuetralize
+2025-07-24T21:43:48.015271237: Loaded 3 users from database
+2025-07-24T21:43:48.025527496: Chat server starting on port 12345
+2025-07-24T23:36:53.565929184: Server shutdown initiated
+2025-07-24T23:36:53.566221032: Server shutdown completed
