@@ -416,7 +416,7 @@ public class ClientConnection {
                         String decrypted = decryptWithOwnPrivateKey(message.getContent());
                         System.out.println("[PRIVATE] " + message.getFrom() + ": " + decrypted);
                     } else {
-                        System.out.println("[" + message.getTimestamp().toString().substring(11, 19) + "] " + message.getFrom() + ": " + message.getContent());
+                        //System.out.println("[" + message.getTimestamp().toString().substring(11, 19) + "] " + message.getFrom() + ": " + message.getContent());
                     }
                 } else if (receivedData instanceof String) {
                     String response = (String) receivedData;

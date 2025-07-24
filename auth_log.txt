@@ -283,3 +283,54 @@
 2025-07-24T23:52:01.283620542: User dulshan7 disconnected
 2025-07-24T23:52:15.320882896: Server shutdown initiated
 2025-07-24T23:52:15.321163557: Server shutdown completed
+2025-07-24T23:58:12.433528218: Loaded 8 users from database
+2025-07-24T23:58:12.440572683: Chat server starting on port 12345
+2025-07-24T23:58:17.720326073: Client connection accepted from: 127.0.0.1
+2025-07-24T23:58:17.731083140: Client connected from: /127.0.0.1
+2025-07-24T23:58:18.094952949: Key exchange completed successfully
+2025-07-24T23:58:18.138928640: RSA authentication result: true
+2025-07-24T23:58:20.772879171: Client connection accepted from: 127.0.0.1
+2025-07-24T23:58:20.783554122: Client connected from: /127.0.0.1
+2025-07-24T23:58:21.008041256: Key exchange completed successfully
+2025-07-24T23:58:21.050763609: RSA authentication result: true
+2025-07-24T23:58:32.730563925: User database saved successfully
+2025-07-24T23:58:32.730844650: Authentication successful: dulshan1
+2025-07-24T23:58:32.731243518: User login successful: dulshan1
+2025-07-24T23:58:32.733431441: Client fully authenticated: dulshan1 from /127.0.0.1
+2025-07-24T23:58:48.484407983: Authentication attempt 1 error: null
+2025-07-24T23:58:48.485286654: Authentication attempt 2 error: null
+2025-07-24T23:58:48.489326527: Client handler error: Broken pipe
+2025-07-24T23:58:49.744294015: Client connection accepted from: 127.0.0.1
+2025-07-24T23:58:49.756147011: Client connected from: /127.0.0.1
+2025-07-24T23:58:49.977833191: Key exchange completed successfully
+2025-07-24T23:58:50.012487349: RSA authentication result: true
+2025-07-24T23:58:58.886236821: User database saved successfully
+2025-07-24T23:58:58.886416082: Authentication successful: dulshan7
+2025-07-24T23:58:58.886748855: User login successful: dulshan7
+2025-07-24T23:58:58.889724515: Client fully authenticated: dulshan7 from /127.0.0.1
+2025-07-25T00:06:46.588761688: Client handler error: null
+2025-07-25T00:06:46.590387892: User dulshan7 disconnected
+2025-07-25T00:06:54.576954519: Client handler error: null
+2025-07-25T00:06:54.577298520: User dulshan1 disconnected
+2025-07-25T00:07:02.587097953: Server shutdown initiated
+2025-07-25T00:07:02.587535578: Server shutdown completed
+2025-07-25T00:07:17.332980294: Loaded 8 users from database
+2025-07-25T00:07:17.342163607: Chat server starting on port 12345
+2025-07-25T00:07:20.490450055: Client connection accepted from: 127.0.0.1
+2025-07-25T00:07:20.501521782: Client connected from: /127.0.0.1
+2025-07-25T00:07:20.845406117: Key exchange completed successfully
+2025-07-25T00:07:20.894313827: RSA authentication result: true
+2025-07-25T00:07:22.522823736: Client connection accepted from: 127.0.0.1
+2025-07-25T00:07:22.536285164: Client connected from: /127.0.0.1
+2025-07-25T00:07:22.684637713: Key exchange completed successfully
+2025-07-25T00:07:22.722520732: RSA authentication result: true
+2025-07-25T00:07:37.616475988: User database saved successfully
+2025-07-25T00:07:37.616707017: Authentication successful: dulshan1
+2025-07-25T00:07:37.617083830: User login successful: dulshan1
+2025-07-25T00:07:37.619269732: Client fully authenticated: dulshan1 from /127.0.0.1
+2025-07-25T00:07:45.736663325: User database saved successfully
+2025-07-25T00:07:45.736827532: Authentication successful: dulshan7
+2025-07-25T00:07:45.737165609: User login successful: dulshan7
+2025-07-25T00:07:45.739403667: Client fully authenticated: dulshan7 from /127.0.0.1
+2025-07-25T00:16:03.424693878: Server shutdown initiated
+2025-07-25T00:16:03.425594645: Server shutdown completed
