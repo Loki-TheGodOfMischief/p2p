@@ -326,10 +326,7 @@ public class ClientHandler implements Runnable {
                 break;
             }
         }
-        // Optionally, send a copy to the sender as confirmation
-        if (!msg.getFrom().equalsIgnoreCase(msg.getTo())) {
-            sendMessage(msg);
-        }
+        // Do NOT send a copy to the sender
         if (!found) {
             sendSystemMessage("User '" + msg.getTo() + "' not found or not online.");
         }
