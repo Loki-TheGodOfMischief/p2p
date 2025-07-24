@@ -229,3 +229,57 @@
 2025-07-24T23:24:38.126072500: User registered successfully: dulshan10
 2025-07-24T23:24:38.128730900: User registration successful: dulshan10
 2025-07-24T23:24:38.134873300: Client fully authenticated: dulshan10 from /127.0.0.1
+2025-07-24T23:44:56.473049982: Loaded 6 users from database
+2025-07-24T23:44:56.486209864: Chat server starting on port 12345
+2025-07-24T23:45:50.932718376: Client connection accepted from: 127.0.0.1
+2025-07-24T23:45:50.953258106: Client connected from: /127.0.0.1
+2025-07-24T23:45:51.842638727: Key exchange completed successfully
+2025-07-24T23:45:51.906901348: RSA authentication result: true
+2025-07-24T23:45:57.974352662: Client connection accepted from: 127.0.0.1
+2025-07-24T23:45:58.010443728: Client connected from: /127.0.0.1
+2025-07-24T23:45:58.421239980: Key exchange completed successfully
+2025-07-24T23:45:58.522594871: RSA authentication result: true
+2025-07-24T23:46:04.341707342: Client connection accepted from: 127.0.0.1
+2025-07-24T23:46:04.365869168: Client connected from: /127.0.0.1
+2025-07-24T23:46:04.811788851: Key exchange completed successfully
+2025-07-24T23:46:04.874069235: RSA authentication result: true
+2025-07-24T23:46:23.956139460: Authentication failed: Invalid password for user 'kavinda'
+2025-07-24T23:46:23.957064895: Login failed for username: kavinda
+2025-07-24T23:46:38.955281822: Authentication failed: User 'kavind' not found
+2025-07-24T23:46:38.957938599: Login failed for username: kavind
+2025-07-24T23:46:52.815293373: User database saved successfully
+2025-07-24T23:46:52.815719453: Authentication successful: kavinda
+2025-07-24T23:46:52.816392807: User login successful: kavinda
+2025-07-24T23:46:52.819454445: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T23:47:15.277111967: Authentication failed: Invalid password for user 'dulshan'
+2025-07-24T23:47:15.277853173: Login failed for username: dulshan
+2025-07-24T23:47:30.302684564: User database saved successfully
+2025-07-24T23:47:30.302969695: User registered successfully: dulshan7
+2025-07-24T23:47:30.303457349: User registration successful: dulshan7
+2025-07-24T23:47:30.306446273: Client fully authenticated: dulshan7 from /127.0.0.1
+2025-07-24T23:47:47.008598051: User database saved successfully
+2025-07-24T23:47:47.008789860: User registered successfully: dulshan1
+2025-07-24T23:47:47.009166038: User registration successful: dulshan1
+2025-07-24T23:47:47.011891729: Client fully authenticated: dulshan1 from /127.0.0.1
+2025-07-24T23:49:44.695470962: Client connection accepted from: 127.0.0.1
+2025-07-24T23:49:44.714914472: Client connected from: /127.0.0.1
+2025-07-24T23:49:44.969193981: Key exchange completed successfully
+2025-07-24T23:49:45.028300345: RSA authentication result: true
+2025-07-24T23:50:11.408746536: User database saved successfully
+2025-07-24T23:50:11.408966097: Authentication successful: admin
+2025-07-24T23:50:11.409279468: User login successful: admin
+2025-07-24T23:50:11.411451418: Client fully authenticated: admin from /127.0.0.1
+2025-07-24T23:51:40.577336880: User admin disconnected gracefully
+2025-07-24T23:51:40.578558109: Client handler error: null
+2025-07-24T23:51:40.579792406: User admin disconnected
+2025-07-24T23:51:53.221818988: User dulshan1 disconnected gracefully
+2025-07-24T23:51:53.222144584: Client handler error: null
+2025-07-24T23:51:53.223075597: User dulshan1 disconnected
+2025-07-24T23:51:57.680147471: User kavinda disconnected gracefully
+2025-07-24T23:51:57.680878801: Client handler error: null
+2025-07-24T23:51:57.681547154: User kavinda disconnected
+2025-07-24T23:52:01.282959079: User dulshan7 disconnected gracefully
+2025-07-24T23:52:01.283410520: Client handler error: null
+2025-07-24T23:52:01.283620542: User dulshan7 disconnected
+2025-07-24T23:52:15.320882896: Server shutdown initiated
+2025-07-24T23:52:15.321163557: Server shutdown completed
