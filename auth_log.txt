@@ -285,3 +285,88 @@
 2025-07-25T00:12:45.102399500: User kavinda disconnected
 2025-07-25T00:12:49.835290300: Server shutdown initiated
 2025-07-25T00:12:49.836282900: Server shutdown completed
+2025-07-25T16:07:25.105625394: Loaded 7 users from database
+2025-07-25T16:07:25.114996743: Chat server starting on port 12345
+2025-07-25T16:11:46.397285586: Client connection accepted from: 127.0.0.1
+2025-07-25T16:11:46.408032946: Client connected from: /127.0.0.1
+2025-07-25T16:11:46.734917598: Key exchange completed successfully
+2025-07-25T16:11:46.770120428: RSA authentication result: true
+2025-07-25T16:11:48.487708591: Authentication attempt 1 error: null
+2025-07-25T16:11:48.488599225: Authentication attempt 2 error: null
+2025-07-25T16:11:48.493592548: Client handler error: Broken pipe
+2025-07-25T16:17:09.842472116: Client connection accepted from: 127.0.0.1
+2025-07-25T16:17:09.844129209: Client connected from: /127.0.0.1
+2025-07-25T16:17:10.194100545: Key exchange completed successfully
+2025-07-25T16:17:10.218057303: RSA authentication result: true
+2025-07-25T16:17:18.098308248: Client connection accepted from: 127.0.0.1
+2025-07-25T16:17:18.099712112: Client connected from: /127.0.0.1
+2025-07-25T16:17:18.233178661: Key exchange completed successfully
+2025-07-25T16:17:18.244838839: RSA authentication result: true
+2025-07-25T16:17:37.473255416: Authentication failed: User 'dulshan1' not found
+2025-07-25T16:17:37.473901593: Login failed for username: dulshan1
+2025-07-25T16:17:37.509566443: Authentication attempt 1 error: null
+2025-07-25T16:17:37.510186857: Authentication attempt 2 error: null
+2025-07-25T16:17:37.511028995: Client handler error: Broken pipe
+2025-07-25T16:18:00.815145009: Client connection accepted from: 127.0.0.1
+2025-07-25T16:18:00.816284961: Client connected from: /127.0.0.1
+2025-07-25T16:18:01.141314943: Key exchange completed successfully
+2025-07-25T16:18:01.156176695: RSA authentication result: true
+2025-07-25T16:18:11.041214667: Authentication attempt 1 error: null
+2025-07-25T16:18:11.042340527: Authentication attempt 2 error: null
+2025-07-25T16:18:11.043971613: Client handler error: Broken pipe
+2025-07-25T16:18:11.083909065: Authentication attempt 2 error: Connection reset
+2025-07-25T16:18:11.084851717: Client handler error: Broken pipe
+2025-07-25T16:18:23.845988290: Client connection accepted from: 127.0.0.1
+2025-07-25T16:18:23.847775559: Client connected from: /127.0.0.1
+2025-07-25T16:18:24.049077493: Key exchange completed successfully
+2025-07-25T16:18:24.075839060: RSA authentication result: true
+2025-07-25T16:18:32.998950073: Authentication attempt 1 error: null
+2025-07-25T16:18:33.000122618: Authentication attempt 2 error: null
+2025-07-25T16:18:33.001906582: Client handler error: Broken pipe
+2025-07-25T16:18:49.283376309: Client connection accepted from: 127.0.0.1
+2025-07-25T16:18:49.285141308: Client connected from: /127.0.0.1
+2025-07-25T16:18:49.464611088: Key exchange completed successfully
+2025-07-25T16:18:49.497405180: RSA authentication result: true
+2025-07-25T16:18:53.730855401: Client connection accepted from: 127.0.0.1
+2025-07-25T16:18:53.732020668: Client connected from: /127.0.0.1
+2025-07-25T16:18:53.868292122: Key exchange completed successfully
+2025-07-25T16:18:53.890454967: RSA authentication result: true
+2025-07-25T16:19:22.999427211: Client connection accepted from: 127.0.0.1
+2025-07-25T16:19:23.000698358: Client connected from: /127.0.0.1
+2025-07-25T16:19:23.126959868: Key exchange completed successfully
+2025-07-25T16:19:23.139457622: Authentication attempt 1 error: null
+2025-07-25T16:19:23.140019731: Authentication attempt 2 error: null
+2025-07-25T16:19:23.140092307: Authentication attempt 1 error: null
+2025-07-25T16:19:23.140497953: Authentication attempt 2 error: null
+2025-07-25T16:19:23.140604965: Client handler error: Broken pipe
+2025-07-25T16:19:23.141130871: Client handler error: Broken pipe
+2025-07-25T16:19:23.146062366: RSA authentication result: true
+2025-07-25T16:19:39.720316079: User database saved successfully
+2025-07-25T16:19:39.720551390: User registered successfully: dulshan2
+2025-07-25T16:19:39.720910546: User registration successful: dulshan2
+2025-07-25T16:19:46.360561646: Client handler error: class common.Message cannot be cast to class [B (common.Message is in unnamed module of loader 'app'; [B is in module java.base of loader 'bootstrap')
+2025-07-25T17:53:36.348889587: Loaded 8 users from database
+2025-07-25T17:53:36.355723542: Chat server starting on port 12345
+2025-07-25T17:54:33.955820966: Client connection accepted from: 127.0.0.1
+2025-07-25T17:54:33.960693440: Client connected from: /127.0.0.1
+2025-07-25T17:54:34.521955890: Key exchange completed successfully
+2025-07-25T17:54:34.559295086: RSA authentication result: true
+2025-07-25T17:54:53.975240138: Authentication failed: User 'dulshan7' not found
+2025-07-25T17:54:53.976252507: Login failed for username: dulshan7
+2025-07-25T17:55:36.299256801: Client connection accepted from: 127.0.0.1
+2025-07-25T17:55:36.300967327: Client connected from: /127.0.0.1
+2025-07-25T17:55:36.489119345: Key exchange completed successfully
+2025-07-25T17:55:36.503377111: RSA authentication result: true
+2025-07-25T17:55:48.082216490: Authentication failed: User 'dulshan3' not found
+2025-07-25T17:55:48.083095847: Login failed for username: dulshan3
+2025-07-25T17:56:12.452379970: Client connection accepted from: 127.0.0.1
+2025-07-25T17:56:12.453040531: Client connected from: /127.0.0.1
+2025-07-25T17:56:12.636391002: Key exchange completed successfully
+2025-07-25T17:56:12.643749345: RSA authentication result: true
+2025-07-25T17:57:56.945733842: Authentication attempt 1 error: null
+2025-07-25T17:57:56.946857598: Authentication attempt 2 error: null
+2025-07-25T17:57:56.951354787: Client handler error: Broken pipe
+2025-07-25T17:57:56.976656681: Authentication attempt 2 error: Connection reset
+2025-07-25T17:57:56.977332247: Client handler error: Broken pipe
+2025-07-25T17:57:56.977832828: Authentication attempt 2 error: Connection reset
+2025-07-25T17:57:56.978373381: Client handler error: Broken pipe

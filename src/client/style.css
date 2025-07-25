@@ -1,0 +1,231 @@
+/* Main Application Styling */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Arial", sans-serif;
+}
+
+/* Connection Panel */
+.connection-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+
+/* Status Panel */
+.status-panel {
+    -fx-background-color: #e8e8e8;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.status-connected {
+    -fx-text-fill: #28a745;
+    -fx-font-weight: bold;
+}
+
+.status-disconnected {
+    -fx-text-fill: #dc3545;
+    -fx-font-weight: bold;
+}
+
+.username-label {
+    -fx-text-fill: #007bff;
+    -fx-font-weight: bold;
+}
+
+/* Chat Area */
+.chat-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-family: "Consolas", "Monaco", monospace;
+}
+
+.chat-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.chat-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.chat-area .content {
+    -fx-background-color: transparent;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.connect-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-border-color: #1e7e34;
+    -fx-border-width: 1px;
+}
+
+.connect-button:hover {
+    -fx-background-color: #218838;
+}
+
+.connect-button:pressed {
+    -fx-background-color: #1e7e34;
+}
+
+.disconnect-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-border-color: #bd2130;
+    -fx-border-width: 1px;
+}
+
+.disconnect-button:hover {
+    -fx-background-color: #c82333;
+}
+
+.disconnect-button:pressed {
+    -fx-background-color: #bd2130;
+}
+
+.send-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-border-color: #0056b3;
+    -fx-border-width: 1px;
+    -fx-min-width: 80px;
+}
+
+.send-button:hover {
+    -fx-background-color: #0056b3;
+}
+
+.send-button:pressed {
+    -fx-background-color: #004085;
+}
+
+.clear-button {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-border-color: #545b62;
+    -fx-border-width: 1px;
+}
+
+.clear-button:hover {
+    -fx-background-color: #545b62;
+}
+
+.clear-button:pressed {
+    -fx-background-color: #495057;
+}
+
+.command-button {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+    -fx-border-color: #117a8b;
+    -fx-border-width: 1px;
+}
+
+.command-button:hover {
+    -fx-background-color: #117a8b;
+}
+
+.command-button:pressed {
+    -fx-background-color: #0c5460;
+}
+
+.button:disabled {
+    -fx-background-color: #e9ecef;
+    -fx-text-fill: #6c757d;
+    -fx-border-color: #dee2e6;
+    -fx-cursor: default;
+}
+
+/* Text Fields */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px 10px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #007bff;
+    -fx-border-width: 2px;
+}
+
+.text-field:disabled, .password-field:disabled {
+    -fx-background-color: #e9ecef;
+    -fx-text-fill: #6c757d;
+}
+
+/* Separators */
+.separator:horizontal .line {
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0.5px 0 0 0;
+}
+
+.separator:vertical .line {
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0 0 0 0.5px;
+}
+
+/* Dialog Styling */
+.dialog-pane {
+    -fx-background-color: #ffffff;
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: #f8f9fa;
+}
+
+.dialog-pane > .header-panel > .label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button-bar > .container {
+    -fx-background-color: #f8f9fa;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #f8f9fa;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #f8f9fa;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #6c757d;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: #495057;
+}
+
+.scroll-pane .scroll-bar .thumb:pressed {
+    -fx-background-color: #343a40;
+}

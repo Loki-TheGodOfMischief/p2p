@@ -1,0 +1,20 @@
+SRC_DIR=src
+OUT_DIR=out
+RESOURCES_DIR=resources
+CLIENT_GUI_MAIN=client.ChatClientGUI
+
+all: compile run
+
+compile:
+	mkdir -p $(OUT_DIR)
+	mkdir -p $(OUT_DIR)/resources
+	javac --module-path $(JAVAFX_PATH) --add-modules javafx.controls,javafx.fxml -d $(OUT_DIR) $(shell find $(SRC_DIR) -name "*.java")
+	cp -r $(RESOURCES_DIR)/* $(OUT_DIR)/ 2>/dev/null || mkdir -p $(OUT_DIR)/resources
+
+run:
+	java --module-path $(JAVAFX_PATH) --add-modules javafx.controls,javafx.fxml -cp $(OUT_DIR) $(CLIENT_GUI_MAIN)
+
+clean:
+	rm -rf $(OUT_DIR)
+
+.PHONY: all compile run clean
