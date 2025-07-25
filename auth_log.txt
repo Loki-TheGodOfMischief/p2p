@@ -60,7 +60,228 @@
 2025-07-24T17:52:01.263472739: Message from Dulshan@Cyber: since we all are one single being, one entity experience a bad thing of those 8, another entity must be experince the good part of that, that is the balance of the universe
 2025-07-24T17:53:21.091717805: Message from Dulshan: So, that means simply the everything happen is in a normal curve!, If someone n entities are happy, another n entities are sad?
 2025-07-24T17:54:16.665550774: Message from Dulshan@Cyber: Not much correct, that is not about happy, sad, that is the sum of all things will be nuetralize
-2025-07-24T21:43:48.015271237: Loaded 3 users from database
-2025-07-24T21:43:48.025527496: Chat server starting on port 12345
-2025-07-24T23:36:53.565929184: Server shutdown initiated
-2025-07-24T23:36:53.566221032: Server shutdown completed
+2025-07-24T22:10:11.675322300: Loaded 3 users from database
+2025-07-24T22:10:11.685001: Chat server starting on port 12345
+2025-07-24T22:10:28.422319400: Client connection accepted from: 127.0.0.1
+2025-07-24T22:10:28.436336300: Client connected from: /127.0.0.1
+2025-07-24T22:10:29.030774100: Key exchange completed successfully
+2025-07-24T22:10:29.356592: RSA authentication result: true
+2025-07-24T22:11:48.637290100: User database saved successfully
+2025-07-24T22:11:48.638289800: User registered successfully: kavinda
+2025-07-24T22:11:48.639325800: User registration successful: kavinda
+2025-07-24T22:11:48.641825300: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T22:12:21.982132300: Client connection accepted from: 127.0.0.1
+2025-07-24T22:12:21.998174400: Client connected from: /127.0.0.1
+2025-07-24T22:12:22.438648100: Key exchange completed successfully
+2025-07-24T22:12:22.808833300: RSA authentication result: true
+2025-07-24T22:13:35.134049100: Authentication attempt 1 error: Connection reset
+2025-07-24T22:13:35.138089: Client handler error: Connection reset by peer
+2025-07-24T22:13:39.710602: Client connection accepted from: 127.0.0.1
+2025-07-24T22:13:39.723589200: Client connected from: /127.0.0.1
+2025-07-24T22:13:40.015833700: Key exchange completed successfully
+2025-07-24T22:13:40.290915200: RSA authentication result: true
+2025-07-24T22:14:11.181732600: User database saved successfully
+2025-07-24T22:14:11.182306700: User registered successfully: sandamal
+2025-07-24T22:14:11.183289500: User registration successful: sandamal
+2025-07-24T22:14:11.183788800: Client fully authenticated: sandamal from /127.0.0.1
+2025-07-24T22:14:23.001777800: Message from sandamal: hii kavinda
+2025-07-24T22:14:35.166391600: Message from kavinda: hello sandamal
+2025-07-24T22:16:15.254719500: Client connection accepted from: 127.0.0.1
+2025-07-24T22:16:15.306879600: Client connected from: /127.0.0.1
+2025-07-24T22:16:16.198325800: Key exchange completed successfully
+2025-07-24T22:16:16.966469: RSA authentication result: true
+2025-07-24T22:16:40.427212300: User database saved successfully
+2025-07-24T22:16:40.429006300: Authentication successful: admin
+2025-07-24T22:16:40.429006300: User login successful: admin
+2025-07-24T22:16:40.430371300: Client fully authenticated: admin from /127.0.0.1
+2025-07-24T22:21:10.463733400: Server shutdown initiated
+2025-07-24T22:21:10.483996: Server shutdown completed
+2025-07-24T22:21:25.036852700: Loaded 5 users from database
+2025-07-24T22:21:25.051571500: Chat server starting on port 12345
+2025-07-24T22:21:37.796109300: Client connection accepted from: 127.0.0.1
+2025-07-24T22:21:37.808890200: Client connected from: /127.0.0.1
+2025-07-24T22:21:38.570051800: Key exchange completed successfully
+2025-07-24T22:21:38.885441800: RSA authentication result: true
+2025-07-24T22:21:48.862836200: Authentication failed: Invalid password for user 'admin'
+2025-07-24T22:21:48.864383100: Login failed for username: admin
+2025-07-24T22:22:09.618247700: User database saved successfully
+2025-07-24T22:22:09.619414300: Authentication successful: admin
+2025-07-24T22:22:09.620212400: User login successful: admin
+2025-07-24T22:22:09.621618100: Client fully authenticated: admin from /127.0.0.1
+2025-07-24T22:22:22.225975200: Client connection accepted from: 127.0.0.1
+2025-07-24T22:22:22.241689: Client connected from: /127.0.0.1
+2025-07-24T22:22:22.511450500: Key exchange completed successfully
+2025-07-24T22:22:22.799363200: RSA authentication result: true
+2025-07-24T22:22:33.469022100: User database saved successfully
+2025-07-24T22:22:33.470138900: Authentication successful: kavinda
+2025-07-24T22:22:33.471014500: User login successful: kavinda
+2025-07-24T22:22:33.471305500: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T22:22:59.732890400: Message from admin: hii kavinda
+2025-07-24T22:23:39.034346500: Message from admin: 1
+2025-07-24T22:34:21.865477: Server shutdown initiated
+2025-07-24T22:34:21.878915: Server shutdown completed
+2025-07-24T22:34:30.336856700: Loaded 5 users from database
+2025-07-24T22:34:30.344747100: Chat server starting on port 12345
+2025-07-24T22:34:44.321020700: Client connection accepted from: 127.0.0.1
+2025-07-24T22:34:44.333447200: Client connected from: /127.0.0.1
+2025-07-24T22:34:44.968411700: Key exchange completed successfully
+2025-07-24T22:34:45.208222: RSA authentication result: true
+2025-07-24T22:34:55.084426800: User database saved successfully
+2025-07-24T22:34:55.085646: Authentication successful: admin
+2025-07-24T22:34:55.087522200: User login successful: admin
+2025-07-24T22:34:55.089762200: Client fully authenticated: admin from /127.0.0.1
+2025-07-24T22:35:00.850251900: Client connection accepted from: 127.0.0.1
+2025-07-24T22:35:00.864492800: Client connected from: /127.0.0.1
+2025-07-24T22:35:01.345608600: Key exchange completed successfully
+2025-07-24T22:35:01.589878300: RSA authentication result: true
+2025-07-24T22:35:12.409209500: User database saved successfully
+2025-07-24T22:35:12.410122: Authentication successful: kavinda
+2025-07-24T22:35:12.410627300: User login successful: kavinda
+2025-07-24T22:35:12.411361200: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T22:54:29.592981200: Loaded 5 users from database
+2025-07-24T22:54:29.639059100: Chat server starting on port 12345
+2025-07-24T22:54:29.718695200: Server error: Address already in use: bind
+2025-07-24T22:54:31.439496100: Client connection accepted from: 127.0.0.1
+2025-07-24T22:54:31.466105900: Client connected from: /127.0.0.1
+2025-07-24T22:54:33.215000200: Key exchange completed successfully
+2025-07-24T22:54:34.313779100: RSA authentication result: true
+2025-07-24T22:54:46.813437400: Server shutdown initiated
+2025-07-24T22:54:46.831168300: Server shutdown completed
+2025-07-24T22:55:39.638535800: Loaded 5 users from database
+2025-07-24T22:55:39.703572300: Chat server starting on port 12345
+2025-07-24T22:55:40.040662800: Client connection accepted from: 127.0.0.1
+2025-07-24T22:55:40.118764600: Client connected from: /127.0.0.1
+2025-07-24T22:55:43.135937400: Key exchange completed successfully
+2025-07-24T22:55:44.280997900: RSA authentication result: true
+2025-07-24T22:56:17.083043100: User database saved successfully
+2025-07-24T22:56:17.089313: Authentication successful: kavinda
+2025-07-24T22:56:17.095632200: User login successful: kavinda
+2025-07-24T22:56:17.102907: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T22:56:52.268164700: Client connection accepted from: 127.0.0.1
+2025-07-24T22:56:52.337232200: Client connected from: /127.0.0.1
+2025-07-24T22:56:53.424738300: Key exchange completed successfully
+2025-07-24T22:56:55.821076400: RSA authentication result: true
+2025-07-24T22:57:10.460696600: User database saved successfully
+2025-07-24T22:57:10.470234400: Authentication successful: sandamal
+2025-07-24T22:57:10.477462400: User login successful: sandamal
+2025-07-24T22:57:10.478764400: Client fully authenticated: sandamal from /127.0.0.1
+2025-07-24T22:57:48.441751300: Client handler error: An established connection was aborted by the software in your host machine
+2025-07-24T22:57:48.444188900: User sandamal disconnected
+2025-07-24T22:57:59.559724100: Client connection accepted from: 127.0.0.1
+2025-07-24T22:57:59.629968700: Client connected from: /127.0.0.1
+2025-07-24T22:58:00.785107500: Key exchange completed successfully
+2025-07-24T22:58:02.020563800: RSA authentication result: true
+2025-07-24T22:58:14.831089400: Authentication attempt 1 error: Connection reset
+2025-07-24T22:58:14.833442300: Client handler error: Connection reset by peer
+2025-07-24T22:58:24.709425600: Client connection accepted from: 127.0.0.1
+2025-07-24T22:58:24.776579: Client connected from: /127.0.0.1
+2025-07-24T22:58:25.380983600: Key exchange completed successfully
+2025-07-24T22:58:26.635346400: RSA authentication result: true
+2025-07-24T22:58:43.344356900: User database saved successfully
+2025-07-24T22:58:43.345182300: Authentication successful: sandamal
+2025-07-24T22:58:43.346843900: User login successful: sandamal
+2025-07-24T22:58:43.347676600: Client fully authenticated: sandamal from /127.0.0.1
+2025-07-24T22:59:08.325976600: Message from sandamal: hii, kavinda
+2025-07-24T22:59:19.394623: Message from sandamal: hii all
+2025-07-24T23:04:46.298983700: Message from kavinda: q
+2025-07-24T23:04:46.728871500: Client handler error: Connection reset
+2025-07-24T23:04:46.768824100: User kavinda disconnected
+2025-07-24T23:09:40.761248300: Client handler error: Connection reset
+2025-07-24T23:09:40.763299100: User sandamal disconnected
+2025-07-24T23:14:50.501400900: Loaded 5 users from database
+2025-07-24T23:14:50.584065300: Chat server starting on port 12345
+2025-07-24T23:14:50.667920900: Server error: Address already in use: bind
+2025-07-24T23:15:31.128929600: Server shutdown initiated
+2025-07-24T23:15:31.144713: Server shutdown completed
+2025-07-24T23:17:54.710133500: Loaded 5 users from database
+2025-07-24T23:17:54.727002600: Chat server starting on port 12345
+2025-07-24T23:19:43.815877300: Client connection accepted from: 127.0.0.1
+2025-07-24T23:19:43.913257900: Client connected from: /127.0.0.1
+2025-07-24T23:19:45.870161300: Key exchange completed successfully
+2025-07-24T23:19:45.933899700: RSA authentication result: true
+2025-07-24T23:19:59.856135: User database saved successfully
+2025-07-24T23:19:59.857719900: Authentication successful: kavinda
+2025-07-24T23:19:59.872305800: User login successful: kavinda
+2025-07-24T23:19:59.881062600: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-24T23:20:38.894589900: Client connection accepted from: 127.0.0.1
+2025-07-24T23:20:38.909955100: Client connected from: /127.0.0.1
+2025-07-24T23:20:39.433821300: Key exchange completed successfully
+2025-07-24T23:20:39.477070400: RSA authentication result: true
+2025-07-24T23:20:51.507545: User database saved successfully
+2025-07-24T23:20:51.508643800: Authentication successful: sandamal
+2025-07-24T23:20:51.510407900: User login successful: sandamal
+2025-07-24T23:20:51.514293600: Client fully authenticated: sandamal from /127.0.0.1
+2025-07-24T23:22:31.998684900: Client connection accepted from: 127.0.0.1
+2025-07-24T23:22:32.013721800: Client connected from: /127.0.0.1
+2025-07-24T23:22:32.402945700: Key exchange completed successfully
+2025-07-24T23:22:32.464681100: RSA authentication result: true
+2025-07-24T23:22:48.417762400: Authentication attempt 1 error: Connection reset
+2025-07-24T23:22:48.423957700: Client handler error: Connection reset by peer
+2025-07-24T23:22:50.516164200: Client connection accepted from: 127.0.0.1
+2025-07-24T23:22:50.529902500: Client connected from: /127.0.0.1
+2025-07-24T23:22:50.895780900: Key exchange completed successfully
+2025-07-24T23:22:50.936123700: RSA authentication result: true
+2025-07-24T23:23:21.861869900: Authentication failed: Invalid password for user 'dulshan@cyber'
+2025-07-24T23:23:21.862878400: Login failed for username: dulshan@cyber
+2025-07-24T23:24:04.414347600: Registration failed: Username 'dulshan' already exists
+2025-07-24T23:24:04.417740200: Registration failed for username: dulshan
+2025-07-24T23:24:38.125363600: User database saved successfully
+2025-07-24T23:24:38.126072500: User registered successfully: dulshan10
+2025-07-24T23:24:38.128730900: User registration successful: dulshan10
+2025-07-24T23:24:38.134873300: Client fully authenticated: dulshan10 from /127.0.0.1
+2025-07-25T00:01:39.788967600: Client handler error: Connection reset
+2025-07-25T00:01:39.807527600: User sandamal disconnected
+2025-07-25T00:01:48.134039800: Client handler error: Connection reset
+2025-07-25T00:01:48.135046800: User kavinda disconnected
+2025-07-25T00:01:55.653947400: Client handler error: Connection reset
+2025-07-25T00:01:55.655321500: User dulshan10 disconnected
+2025-07-25T00:05:38.303963400: Loaded 6 users from database
+2025-07-25T00:05:38.316406400: Chat server starting on port 12345
+2025-07-25T00:05:38.339562700: Server error: Address already in use: bind
+2025-07-25T00:06:14.367997500: Server shutdown initiated
+2025-07-25T00:06:14.372993500: Server shutdown completed
+2025-07-25T00:07:20.140581800: Loaded 6 users from database
+2025-07-25T00:07:20.170384800: Chat server starting on port 12345
+2025-07-25T00:07:22.770699700: Client connection accepted from: 127.0.0.1
+2025-07-25T00:07:22.798713600: Client connected from: /127.0.0.1
+2025-07-25T00:07:23.819709100: Key exchange completed successfully
+2025-07-25T00:07:23.883611100: RSA authentication result: true
+2025-07-25T00:07:39.350070200: User database saved successfully
+2025-07-25T00:07:39.351624300: Authentication successful: kavinda
+2025-07-25T00:07:39.352619700: User login successful: kavinda
+2025-07-25T00:07:39.359034400: Client fully authenticated: kavinda from /127.0.0.1
+2025-07-25T00:07:46.113183: Client connection accepted from: 127.0.0.1
+2025-07-25T00:07:46.129529: Client connected from: /127.0.0.1
+2025-07-25T00:07:46.391452900: Key exchange completed successfully
+2025-07-25T00:07:46.433737300: RSA authentication result: true
+2025-07-25T00:07:58.613592900: User database saved successfully
+2025-07-25T00:07:58.614600: Authentication successful: sandamal
+2025-07-25T00:07:58.615096700: User login successful: sandamal
+2025-07-25T00:07:58.619414300: Client fully authenticated: sandamal from /127.0.0.1
+2025-07-25T00:08:04.267736800: Client connection accepted from: 127.0.0.1
+2025-07-25T00:08:04.284678400: Client connected from: /127.0.0.1
+2025-07-25T00:08:04.583020: Key exchange completed successfully
+2025-07-25T00:08:04.616824200: RSA authentication result: true
+2025-07-25T00:08:24.800733500: Authentication failed: Invalid password for user 'dulshan10'
+2025-07-25T00:08:24.801734900: Login failed for username: dulshan10
+2025-07-25T00:08:39.595383400: Authentication failed: Invalid password for user 'dulshan10'
+2025-07-25T00:08:39.596560600: Login failed for username: dulshan10
+2025-07-25T00:09:09.367431400: Authentication failed: Invalid password for user 'dulshan10'
+2025-07-25T00:09:09.367932300: Login failed for username: dulshan10
+2025-07-25T00:09:09.370401: User authentication failed for client: /127.0.0.1
+2025-07-25T00:09:14.798400100: Client connection accepted from: 127.0.0.1
+2025-07-25T00:09:14.817011700: Client connected from: /127.0.0.1
+2025-07-25T00:09:15.259813700: Key exchange completed successfully
+2025-07-25T00:09:15.298178: RSA authentication result: true
+2025-07-25T00:09:30.893554900: Authentication failed: Invalid password for user 'dulshan10'
+2025-07-25T00:09:30.894541: Login failed for username: dulshan10
+2025-07-25T00:09:46.424088800: Authentication failed: Invalid password for user 'dulshan10'
+2025-07-25T00:09:46.426302100: Login failed for username: dulshan10
+2025-07-25T00:10:16.028560100: User database saved successfully
+2025-07-25T00:10:16.030005700: User registered successfully: test
+2025-07-25T00:10:16.031006900: User registration successful: test
+2025-07-25T00:10:16.038813200: Client fully authenticated: test from /127.0.0.1
+2025-07-25T00:12:45.099401400: Client handler error: Connection reset
+2025-07-25T00:12:45.102399500: User kavinda disconnected
+2025-07-25T00:12:49.835290300: Server shutdown initiated
+2025-07-25T00:12:49.836282900: Server shutdown completed

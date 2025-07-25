@@ -1,12 +1,21 @@
-SRC_DIR=src
-OUT_DIR=out
-CLIENT_MAIN=client.ClientMain
+# Makefile.client (Windows)
+JAVA = javac
+JAVA_FLAGS = -cp .
+CLIENT_SRC = src/client
+CLIENT_CLASSES = bin/client
 
-all: compile run
+all: prepare client
 
-compile:
-	mkdir -p $(OUT_DIR)
-	javac -d $(OUT_DIR) $(shell find $(SRC_DIR) -name "*.java")
+prepare:
+    if not exist "$(CLIENT_CLASSES)" mkdir "$(CLIENT_CLASSES)"
+
+client:
+    $(JAVA) $(JAVA_FLAGS) -d $(CLIENT_CLASSES) $(CLIENT_SRC)/*.java
+
+clean:
+    if exist "$(CLIENT_CLASSES)" rmdir /s /q "$(CLIENT_CLASSES)"
 
 run:
-	java -cp $(OUT_DIR) $(CLIENT_MAIN)
+    java -cp $(CLIENT_CLASSES) client.ClientMain
+
+.PHONY: all prepare client clean run

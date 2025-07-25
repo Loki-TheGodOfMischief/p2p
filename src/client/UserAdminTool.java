@@ -1,4 +1,4 @@
-package server;
+package client;
 
 import java.util.Scanner;
 import common.LoggerUtil;
@@ -85,11 +85,12 @@ public class UserAdminTool {
             if (info != null) {
                 String status = info.isActive() ? "Active" : "Inactive";
                 String created = new java.util.Date(info.getCreatedDate()).toString().substring(0, 19);
-                String lastLogin = info.getLastLoginDate() > 0 ? 
-                    new java.util.Date(info.getLastLoginDate()).toString().substring(0, 19) : "Never";
+                String lastLogin = info.getLastLoginDate() > 0
+                        ? new java.util.Date(info.getLastLoginDate()).toString().substring(0, 19)
+                        : "Never";
 
-                System.out.printf("%-20s %-10s %-20s %-20s%n", 
-                    info.getUsername(), status, created, lastLogin);
+                System.out.printf("%-20s %-10s %-20s %-20s%n",
+                        info.getUsername(), status, created, lastLogin);
             }
         }
     }
@@ -109,7 +110,7 @@ public class UserAdminTool {
         System.out.println("- Must contain uppercase and lowercase letters");
         System.out.println("- Must contain at least one digit");
         System.out.println("- Must contain at least one special character");
-        
+
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
@@ -152,7 +153,8 @@ public class UserAdminTool {
         }
 
         // For admin reset, we need to directly modify the user data
-        // This is a simplified approach - in production, you might want additional verification
+        // This is a simplified approach - in production, you might want additional
+        // verification
         System.out.println("Warning: This will reset the password without verifying the old password.");
         System.out.print("Continue? (yes/no): ");
         String confirm = scanner.nextLine().trim().toLowerCase();
@@ -201,7 +203,7 @@ public class UserAdminTool {
 
         System.out.println("User details:");
         showUserInfo(info);
-        
+
         System.out.print("Are you sure you want to deactivate this user? (yes/no): ");
         String confirm = scanner.nextLine().trim().toLowerCase();
 
@@ -235,18 +237,18 @@ public class UserAdminTool {
         System.out.println("Username: " + info.getUsername());
         System.out.println("Status: " + (info.isActive() ? "Active" : "Inactive"));
         System.out.println("Created: " + new java.util.Date(info.getCreatedDate()));
-        System.out.println("Last Login: " + (info.getLastLoginDate() > 0 ? 
-            new java.util.Date(info.getLastLoginDate()) : "Never"));
+        System.out.println(
+                "Last Login: " + (info.getLastLoginDate() > 0 ? new java.util.Date(info.getLastLoginDate()) : "Never"));
     }
 
     private void showSystemStats() {
         System.out.println("\n=== System Statistics ===");
         System.out.println("Total registered users: " + userManager.getUserCount());
-        
+
         String[] usernames = userManager.getAllUsernames();
         int activeUsers = 0;
         int inactiveUsers = 0;
-        
+
         for (String username : usernames) {
             UserManager.UserInfo info = userManager.getUserInfo(username);
             if (info != null) {
@@ -257,12 +259,12 @@ public class UserAdminTool {
                 }
             }
         }
-        
+
         System.out.println("Active users: " + activeUsers);
         System.out.println("Inactive users: " + inactiveUsers);
         System.out.println("Database file: users.db");
         System.out.println("Log file: auth_log.txt");
-        
+
         // Show recent log entries (last 10)
         System.out.println("\nRecent activity (check auth_log.txt for full log):");
         try {
